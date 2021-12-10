@@ -10,10 +10,10 @@ class Category {
   name: string;
 
   @Column()
-  createdAt: Date;
+  description: string;
 
   @CreateDateColumn()
-  description: string;
+  createdAt: Date;
 
   constructor() {
     if (!this.id) {
