@@ -1,8 +1,4 @@
-import {
-  createConnection,
-  getConnectionManager,
-  getConnectionOptions,
-} from "typeorm";
+import { createConnection, getConnectionOptions } from "typeorm";
 
 interface IOptions {
   host: string;
