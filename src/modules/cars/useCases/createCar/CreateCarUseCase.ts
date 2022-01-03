@@ -1,3 +1,4 @@
+import "reflect-metadata";
 import { injectable, inject } from "tsyringe";
 import { Car } from "@modules/cars/infra/typeorm/entities/Car";
 import { AppError } from "@shared/errors/AppError";
