@@ -3,20 +3,24 @@ import { AppError } from "@shared/errors/AppError";
 import { CreateRentalUseCase } from "./CreateRentalUseCase";
 import dayjs from "dayjs";
 import { DayjsProvider } from "@shared/container/providers/DateProvider/implementations/DayjsProvider";
+import { CarsRepositoryInMemory } from "@modules/cars/repositories/in-memory/CarsRepositoryInMemory";
 
 let createRentalUseCase: CreateRentalUseCase;
 let rentalsRepositoryInMemory: RentalsRepositoryInMemory;
 let dayjsProvider: DayjsProvider;
+let carsRepositoryInMemory: CarsRepositoryInMemory;
 
 describe("Create Rental", () => {
   const addOneDay = dayjs().add(1, "day").toDate();
 
   beforeEach(() => {
+    carsRepositoryInMemory = new CarsRepositoryInMemory();
     rentalsRepositoryInMemory = new RentalsRepositoryInMemory();
     dayjsProvider = new DayjsProvider();
     createRentalUseCase = new CreateRentalUseCase(
       dayjsProvider,
-      rentalsRepositoryInMemory
+      rentalsRepositoryInMemory,
+      carsRepositoryInMemory
     );
   });
 
