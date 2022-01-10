@@ -45,7 +45,7 @@ describe("List category controller", () => {
 
     const response = await request(app).get("/categories");
 
-    expect(response.status).toBe(201);
+    expect(response.status).toBe(200);
     expect(response.body.length).toBe(1);
     expect(response.body[0]).toHaveProperty("id");
   });

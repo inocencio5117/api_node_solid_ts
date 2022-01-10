@@ -7,7 +7,7 @@ import { inject, injectable } from "tsyringe";
 
 interface IRequest {
   id: string;
-  user_id: string;
+  user_id?: string;
 }
 
 @injectable()
