@@ -5,6 +5,7 @@
     "add": "^2.0.6",
     "aws-sdk": "^2.1056.0",
     "bcrypt": "^5.0.1",
+    "class-transformer": "^0.5.1",
     "csv-parse": "^5.0.3",
     "dayjs": "^1.10.7",
     "dotenv": "^11.0.0",
