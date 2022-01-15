@@ -1,11 +1,13 @@
 {
   "dependencies": {
+    "@types/cors": "^2.8.12",
     "@types/express": "^4.17.13",
     "@types/multer": "^1.4.7",
     "add": "^2.0.6",
     "aws-sdk": "^2.1056.0",
     "bcrypt": "^5.0.1",
     "class-transformer": "^0.5.1",
+    "cors": "^2.8.5",
     "csv-parse": "^5.0.3",
     "dayjs": "^1.10.7",
     "dotenv": "^11.0.0",

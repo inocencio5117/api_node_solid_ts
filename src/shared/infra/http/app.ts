@@ -13,10 +13,12 @@ import createConnection from "@shared/infra/typeorm";
 import "../../container";
 import { AppError } from "@shared/errors/AppError";
 import upload from "@config/upload";
+import cors from "cors";
 
 createConnection();
 const app = express();
 
+app.use(cors());
 app.use(express.json());
 app.use(router);
 
