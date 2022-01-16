@@ -16,7 +16,7 @@ export default async function rateLimiter(
     },
   });
 
-  await redis.connect();
+  await redisClient.connect();
 
   const limiter = new RateLimiterRedis({
     storeClient: redisClient,
