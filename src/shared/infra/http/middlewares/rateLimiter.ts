@@ -4,9 +4,11 @@ import { Request, Response, NextFunction } from "express";
 import { AppError } from "@shared/errors/AppError";
 
 const redisClient = redis.createClient({
-  host: process.env.REDIS_HOST,
-  port: Number(process.env.REDIS_PORT),
-  enable_offline_queue: false,
+  legacyMode: true,
+  socket: {
+    host: process.env.REDIS_HOST,
+    port: Number(process.env.REDIS_PORT),
+  },
 });
 
 const limiter = new RateLimiterRedis({
