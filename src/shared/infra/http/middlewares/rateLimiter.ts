@@ -1,4 +1,4 @@
-import redis from "redis";
+import * as redis from "redis";
 import { RateLimiterRedis } from "rate-limiter-flexible";
 import { Request, Response, NextFunction } from "express";
 import { AppError } from "@shared/errors/AppError";
