@@ -23,7 +23,7 @@ import rateLimiter from "@shared/infra/http/middlewares/rateLimiter";
 createConnection();
 const app = express();
 
-app.use(rateLimiter);
+// app.use(rateLimiter);
 
 Sentry.init({
   dsn: process.env.SENTRY_DSN,
