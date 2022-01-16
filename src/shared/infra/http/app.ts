@@ -23,6 +23,8 @@ import rateLimiter from "@shared/infra/http/middlewares/rateLimiter";
 createConnection();
 const app = express();
 
+app.use(rateLimiter);
+
 Sentry.init({
   dsn: process.env.SENTRY_DSN,
   integrations: [
@@ -41,23 +43,11 @@ Sentry.init({
 app.use(Sentry.Handlers.requestHandler());
 app.use(Sentry.Handlers.tracingHandler());
 
-app.use(rateLimiter);
-
 app.use(cors());
 app.use(express.json());
 app.use(router);
 
-app.use(
-  Sentry.Handlers.errorHandler({
-    shouldHandleError(error) {
-      // Capture all 404 and 500 errors
-      if (error.status === 404 || error.status === 500) {
-        return true;
-      }
-      return false;
-    },
-  })
-);
+app.use(Sentry.Handlers.errorHandler());
 
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerFile));
 
